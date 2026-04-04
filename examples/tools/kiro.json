@@ -1,0 +1,31 @@
+{
+  "name": "kiro",
+  "command": "kiro",
+  "description": "Kiro AI IDE CLI tool",
+  "actions": [
+    {
+      "name": "chat",
+      "description": "Send a message to Kiro",
+      "template": "kiro chat \"{{message}}\"",
+      "params": [
+        { "name": "message", "description": "Message to send", "required": true }
+      ]
+    },
+    {
+      "name": "open",
+      "description": "Open a file in Kiro",
+      "template": "kiro open {{path}}",
+      "params": [
+        { "name": "path", "description": "File path", "required": true }
+      ]
+    },
+    {
+      "name": "run",
+      "description": "Run a command through Kiro",
+      "template": "kiro run \"{{command}}\"",
+      "params": [
+        { "name": "command", "description": "Command to run", "required": true }
+      ]
+    }
+  ]
+}

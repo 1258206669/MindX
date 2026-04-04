@@ -1,0 +1,57 @@
+{
+  "name": "macli-ide-bridge",
+  "displayName": "MACLI IDE Bridge",
+  "description": "Bridge between multi-agent-cli and Kiro/Cursor AI",
+  "version": "0.1.0",
+  "publisher": "macli",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -watch -p ."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.7.0",
+    "ws": "^8.18.0"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "macli.bridge.start",
+        "title": "MACLI: Start Bridge Server"
+      },
+      {
+        "command": "macli.bridge.stop",
+        "title": "MACLI: Stop Bridge Server"
+      },
+      {
+        "command": "macli.bridge.status",
+        "title": "MACLI: Bridge Status"
+      }
+    ],
+    "configuration": {
+      "title": "MACLI IDE Bridge",
+      "properties": {
+        "macli.bridge.port": {
+          "type": "number",
+          "default": 4120,
+          "description": "WebSocket server port"
+        },
+        "macli.bridge.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-start bridge on IDE launch"
+        }
+      }
+    }
+  }
+}

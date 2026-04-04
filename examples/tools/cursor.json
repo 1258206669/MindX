@@ -1,0 +1,24 @@
+{
+  "name": "cursor",
+  "command": "cursor",
+  "description": "Cursor AI editor CLI",
+  "actions": [
+    {
+      "name": "open",
+      "description": "Open file or folder in Cursor",
+      "template": "cursor {{path}}",
+      "params": [
+        { "name": "path", "description": "File or folder path", "required": false, "default": "." }
+      ]
+    },
+    {
+      "name": "diff",
+      "description": "Open diff view",
+      "template": "cursor --diff {{file1}} {{file2}}",
+      "params": [
+        { "name": "file1", "description": "First file", "required": true },
+        { "name": "file2", "description": "Second file", "required": true }
+      ]
+    }
+  ]
+}

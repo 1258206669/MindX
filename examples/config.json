@@ -1,0 +1,18 @@
+{
+  "server": {
+    "port": 3120,
+    "host": "127.0.0.1"
+  },
+  "channels": {
+    "feishu": {
+      "appId": "your_feishu_app_id",
+      "appSecret": "your_feishu_app_secret",
+      "verificationToken": "your_verification_token"
+    }
+  },
+  "brain": {
+    "type": "kiro",
+    "command": "kiro",
+    "argsTemplate": "--chat \"{{prompt}}\""
+  }
+}
