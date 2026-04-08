@@ -4,23 +4,33 @@
   "description": "Bridge between multi-agent-cli and Kiro/Cursor AI",
   "version": "0.1.0",
   "publisher": "macli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macli/ide-bridge"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onStartupFinished"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "scripts": {
-    "build": "tsc -p .",
-    "watch": "tsc -watch -p ."
+    "build": "esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "package": "npm run build && vsce package --no-dependencies --allow-missing-repository"
   },
   "devDependencies": {
     "@types/vscode": "^1.90.0",
     "@types/ws": "^8.5.0",
+    "esbuild": "^0.28.0",
     "typescript": "^5.7.0",
     "ws": "^8.18.0"
   },
   "dependencies": {
+    "multi-agent-cli": "file:../..",
     "ws": "^8.18.0"
   },
   "contributes": {
